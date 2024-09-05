@@ -8,7 +8,7 @@ class Cultura (models.Model):
 
 
 
-class Funjope_Apoio_a_eventos_artisticos (models.Model):
+class Funjope_apoio_a_eventos_artisticos (models.Model):
     descricao = models.TextField()
 
     def __str__(self):
@@ -267,6 +267,7 @@ class Ptts_ouvidoria_maria_de_nazare (models.Model):
     nome = models.CharField(max_length=100)
     cpf = models.IntegerField()
     telefone = models.IntegerField()
+    add_status = models.CharField(max_length=20, default='1')
 
     def __str__(self):
         return self.nome

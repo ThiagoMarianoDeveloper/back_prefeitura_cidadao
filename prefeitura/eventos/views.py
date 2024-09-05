@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import Cultura, Funjope_Apoio_a_eventos_artisticos, Funjope_atestado_da_condicao_de_artista_local, Funjope_cadastramento_de_artistas_e_outros, Funjope_concertos_de_orquestra_sinfonica, Funjope_exposicao_de_artes_visuais, Funjope_edital_de_ocupacao_do_casa_da_polvora, Funjope_edital_de_ocupacao_do_casarao_34, Funjope_edital_de_ocupacao_do_hotel_globo, Funjope_instalacao_de_obras_de_arte, Funjope_jp_cultura, Funjope_jp_film_commission, Funjope_lei_dos_edificios, Funjope_prestacao_de_contas, Funjope_projeto_acao_social_pela_musica, Funjope_solicitacao_de_pagamento, Conselho_tutelar, Conselho_tutelar_cristo, Conselho_tutelar_mangabeira, Conselho_tutelar_norte, Conselho_tutelar_praia, Conselho_tutelar_sudeste, Conselho_tutelar_sul, Conselho_tutelar_valentina, Ptts_ouvidoria_maria_de_nazare, Familia_acolhedora, Familia_acolhedora_forms
+from .models import Cultura, Funjope_apoio_a_eventos_artisticos, Funjope_atestado_da_condicao_de_artista_local, Funjope_cadastramento_de_artistas_e_outros, Funjope_concertos_de_orquestra_sinfonica, Funjope_exposicao_de_artes_visuais, Funjope_edital_de_ocupacao_do_casa_da_polvora, Funjope_edital_de_ocupacao_do_casarao_34, Funjope_edital_de_ocupacao_do_hotel_globo, Funjope_instalacao_de_obras_de_arte, Funjope_jp_cultura, Funjope_jp_film_commission, Funjope_lei_dos_edificios, Funjope_prestacao_de_contas, Funjope_projeto_acao_social_pela_musica, Funjope_solicitacao_de_pagamento, Conselho_tutelar, Conselho_tutelar_cristo, Conselho_tutelar_mangabeira, Conselho_tutelar_norte, Conselho_tutelar_praia, Conselho_tutelar_sudeste, Conselho_tutelar_sul, Conselho_tutelar_valentina, Ptts_ouvidoria_maria_de_nazare, Familia_acolhedora, Familia_acolhedora_forms
 from django.db.models import Q 
 
 
@@ -8,6 +8,13 @@ def eventos(request):
     #return HttpResponse("chegou em eventos") 
     #return render(request, 'eventos/eventos.html', {})
     return render(request, 'home.html', {})
+
+
+def admin_eventos(request):
+    return render(request, 'eventos/admin_eventos.html', {})
+
+
+
 
 
 def familia_acolhedora(request):
@@ -83,11 +90,11 @@ def cultura(request):
     return render(request, 'eventos/cultura.html', {})
 
 
-def funjope_Apoio_a_eventos_artisticos(request):
+def funjope_apoio_a_eventos_artisticos(request):
 
     if request.method == "POST":
         descricao = request.POST.get('descricao')
-        salvar = Funjope_Apoio_a_eventos_artisticos()
+        salvar = Funjope_apoio_a_eventos_artisticos()
         salvar.descricao = descricao
         salvar.save()
 

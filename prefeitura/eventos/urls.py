@@ -6,8 +6,10 @@ urlpatterns = [
     #path('', views.eventos, name='eventos'),
     path('', views.eventos),
 
+    path('admin_eventos', views.admin_eventos, name='admin_eventos'),
+
     path('cultura', views.cultura, name='cultura'),
-    path('funjope_Apoio_a_eventos_artisticos', views.funjope_Apoio_a_eventos_artisticos, name='funjope_Apoio_a_eventos_artisticos'),
+    path('funjope_apoio_a_eventos_artisticos', views.funjope_apoio_a_eventos_artisticos, name='funjope_apoio_a_eventos_artisticos'),
     path('funjope_atestado_da_condicao_de_artista_local', views.funjope_atestado_da_condicao_de_artista_local, name='funjope_atestado_da_condicao_de_artista_local'),
     path('funjope_cadastramento_de_artistas_e_outros', views.funjope_cadastramento_de_artistas_e_outros, name='funjope_cadastramento_de_artistas_e_outros'),
     path('funjope_concertos_de_orquestra_sinfonica', views.funjope_concertos_de_orquestra_sinfonica, name='funjope_concertos_de_orquestra_sinfonica'),
